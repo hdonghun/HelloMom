@@ -1,0 +1,46 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.10'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'hello'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	//스프링 웹
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+//
+//	//JPA
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//
+//	//thymeleaf
+//	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+	//lombok
+	implementation 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+	// h2
+	implementation 'com.h2database:h2:1.4.200'
+
+	// My Sql driver
+//	implementation 'mysql:mysql-connector-java:8.0.27'
+
+	//Spring security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
